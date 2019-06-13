@@ -15,7 +15,6 @@ namespace Sweepstakes_Project_
             public MarketingFirm(ISweepstakesManager sweepstakesManager)
             {
             this.sweepstakesManager = sweepstakesManager;
-            
             }
 
 

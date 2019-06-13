@@ -17,33 +17,41 @@ namespace Sweepstakes_Project_
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             Console.WriteLine("Stack manager inserts the sweepstakes");
+
         }
 
-        //uses the stack data structure as underlying structure
-        //public void PushOnToStack()
-        //{
-        //    Stack<int> stack = new Stack<int>();
+        Stack<int> stack = new Stack<int>();
 
-        //    stack.Push(12);
-        //    stack.Push(16);
-        //    stack.Push(87);
+        public void RegisterContestant(Contestant contestant)
+        {
 
-        //    Console.WriteLine("Elements in stack: ");
-        //    foreach (int number in stack)
-        //    {
-        //        Console.WriteLine(number);
-        //    }
+            contestant.RegistrationNumber = stack.Count + 1;
+            stack.Push(contestant.RegistrationNumber);
+            stack.Push(contestant.RegistrationNumber);
+            stack.Push(contestant.RegistrationNumber);
+            stack.Push(contestant.RegistrationNumber);
+            stack.Push(contestant.RegistrationNumber);
+        }
+        public string PickWinner(Contestant contestant)
+        {
+            Random rng = new Random();
+            int registrationNum = rng.Next(1, contestant.RegistrationNumber);
 
-        //    int topOfStack = stack.Pop();
-
-        //    stack.Push(3);
-
-        //    Console.WriteLine("Elements in stack after Pop and Push(3): ");
-        //    foreach (int number in stack)
-        //    {
-        //        Console.WriteLine(number);
-        //    }
-        //}
+            if (registrationNum == contestant.RegistrationNumber)
+            {
+                return contestant.FirstName;
+            }
+            else
+            {
+                return PickWinner(contestant);
+            }
+        }
+        public void PrintContestantInfo(Contestant contestant)
+        {
+            Console.WriteLine("Sweepstakes winner is.. " + PickWinner(contestant));
+        }
+       
+        
     }
 }
 

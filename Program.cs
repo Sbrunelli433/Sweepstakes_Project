@@ -8,13 +8,46 @@ namespace Sweepstakes_Project_
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            SweepstakesStackManager stackManager = new SweepstakesStackManager();
             SweepstakesQueueManager manager = new SweepstakesQueueManager();
-            MarketingFirm marketingFirm = new MarketingFirm(manager);
+            SweepstakesStackManager stackManager = new SweepstakesStackManager();
+            //MarketingFirm marketingFirm = new MarketingFirm(stackManager);
 
+            int choice;
+            int data;
+            while (true)
+            {
+                Console.WriteLine("choose sweepstakes manager type");
+                Console.WriteLine("1. Stack manager");
+                Console.WriteLine("2. Queue manager");
 
+                choice = int.Parse(Console.ReadLine());
+                if (choice == 3)
+                {
+                    break;
+                }
+                switch (choice)
+                {
+                    case 1:
+                        data = int.Parse(Console.ReadLine());
+                        SweepstakesStack();
+                        break;
+                    case 2:
+                        data = int.Parse(Console.ReadLine());
+                        SweepstakesQueue();
+                        break;
+                }
+
+                public void SweepstakesStack()
+                {
+                    MarketingFirm marketingFirm = new MarketingFirm(stackManager);
+                }
+                public void SweepstakesQueue()
+                {
+                    MarketingFirm marketingFirm = new MarketingFirm(manager);
+                }
+            }
         }
     }
 }
