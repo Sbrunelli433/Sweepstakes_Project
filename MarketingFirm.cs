@@ -9,6 +9,6 @@ namespace Sweepstakes_Project_
     class MarketingFirm
     {
 
-        //implement dependency injection to utilize a Sweepstakes Manager
+        //implement dependency injection to utilize a Sweepstakes Manager here.
     }
 }
