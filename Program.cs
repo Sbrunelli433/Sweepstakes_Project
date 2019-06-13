@@ -10,6 +10,11 @@ namespace Sweepstakes_Project_
     {
         static void Main(string[] args)
         {
+            SweepstakesStackManager stackManager = new SweepstakesStackManager();
+            SweepstakesQueueManager manager = new SweepstakesQueueManager();
+            MarketingFirm marketingFirm = new MarketingFirm(manager);
+
+
         }
     }
 }

@@ -10,12 +10,13 @@ namespace Sweepstakes_Project_
     {
         public Sweepstakes GetSweepstakes()
         {
+            Console.WriteLine("Queue Manager gets the sweepstakes");
             throw new NotImplementedException();
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Queue Manager inserts the sweepstakes");
         }
 
 
