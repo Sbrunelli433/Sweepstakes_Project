@@ -19,31 +19,40 @@ namespace Sweepstakes_Project_
             Console.WriteLine("Queue Manager inserts the sweepstakes");
         }
 
-
         //uses the Queue data structure as underlying structure
-        public void EnqueueOnQueue()
+
+        Queue<int> queue = new Queue<int>();
+
+        public void RegisterContestant(Contestant contestant)
         {
-            Queue<int> queue = new Queue<int>();
 
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            queue.Enqueue(3);
+            contestant.RegistrationNumber = queue.Count + 1;
+            queue.Enqueue(contestant.RegistrationNumber);
+            queue.Enqueue(contestant.RegistrationNumber);
+            queue.Enqueue(contestant.RegistrationNumber);
+            queue.Enqueue(contestant.RegistrationNumber);
+            queue.Enqueue(contestant.RegistrationNumber);
+        }
+        public string PickWinner(Contestant contestant)
+        {
+            Random rng = new Random();
+            int registrationNum = rng.Next(1, contestant.RegistrationNumber);
 
-            Console.WriteLine("Elements in queue: ");
-            foreach (int number in queue)
+            if (registrationNum == contestant.RegistrationNumber)
             {
-                Console.WriteLine(number);
+                return contestant.FirstName;
             }
-
-            int startOfQueue = queue.Dequeue();
-
-            queue.Enqueue(92);
-
-            Console.WriteLine("Elements in queue after Dequeue and Enqueue(92): ");
-            foreach (int number in queue)
+            else
             {
-                Console.WriteLine(number);
+                return PickWinner(contestant);
             }
+        }
+        public void PrintContestantInfo(Contestant contestant)
+        {
+            Console.WriteLine("Sweepstakes winner is.. " + PickWinner(contestant));
+        }
+
+        
         }
 
 
