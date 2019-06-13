@@ -47,7 +47,7 @@ namespace Sweepstakes_Project_
         }
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine("Sweepstakes winner is.. " + PickWinner(contestant));
         }
     }
 }
