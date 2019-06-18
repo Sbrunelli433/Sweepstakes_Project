@@ -14,6 +14,11 @@ namespace Sweepstakes_Project_
             string userInput = Console.ReadLine();
             ISweepstakesManager managerType = ManagerFactory.ChooseManager(userInput);
             MarketingFirm marketingFirm = new MarketingFirm(managerType);
+
+
+
+            UserInterface.GetString("Please enter your first name");
+
         }
     }
 }
